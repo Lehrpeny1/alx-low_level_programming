@@ -2,7 +2,7 @@
 #include "main.h"
 
  /**
-  * create_array - creates an array of chars dynamically
+  * *create_array - Creates an array of chars dynamically
   * and initializes it with a specific char
   * @size: size of the array to create
   * @c: char to initialize the array c
@@ -20,15 +20,13 @@ char *create_array(unsigned int size, char c)
 	p = (char *) malloc(sizeof(char) * size);
 
 	if (p == NULL)
-		return (0);
+		return (NULL);
 
-	while (i < size)
+	for (i = 0; i < size; i++)
 	{
-		*(p + i) = c;
+		p[i] = c;
 		i++;
 	}
-
-	*(p + i) = '\0';
 
 	return (p);
 }
